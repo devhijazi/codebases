@@ -1,0 +1,13 @@
+# *
+User-agent: *
+
+Allow: /
+
+Disallow: /*?
+Disallow: /404
+
+# Host
+Host: https://marinetes.com.br
+
+# Sitemaps
+Sitemap: https://marinetes.com.br/sitemap.xml

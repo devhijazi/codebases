@@ -1,0 +1,37 @@
+{
+  "name": "@marinetes/services-list-service",
+  "version": "0.0.0",
+  "license": "HTL",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --no-notify --transpile-only -r tsconfig-paths/register src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "directory": "apps/services-list-service",
+    "url": "git+https://github.com/hitechline-cp/marinetes.git"
+  },
+  "dependencies": {
+    "@marinetes/database": "*",
+    "@marinetes/errors": "*",
+    "@marinetes/utils": "*",
+    "class-transformer": "^0.5.1",
+    "cors": "^2.8.5",
+    "dotenv-defaults": "^3.0.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "mysql2": "^2.2.5",
+    "reflect-metadata": "0.1.13",
+    "typeorm": "^0.2.41",
+    "yup": "0.32.9"
+  },
+  "devDependencies": {
+    "@marinetes/types": "*",
+    "@types/cors": "2.8.10",
+    "@types/dotenv-defaults": "2.0.0",
+    "@types/express": "4.17.11",
+    "cross-env": "^7.0.3",
+    "ts-node": "^10.2.0",
+    "ts-node-dev": "1.1.6",
+    "tsconfig-paths": "3.9.0"
+  }
+}

@@ -1,0 +1,9 @@
+.wrapper {
+  @apply flex flex-col gap-4;
+
+  max-width: var(--wai-max-width);
+}
+
+.content {
+  @apply flex flex-col py-4 px-6 rounded-md bg-gray-100;
+}

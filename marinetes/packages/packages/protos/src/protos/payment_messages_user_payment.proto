@@ -1,0 +1,31 @@
+syntax = "proto2";
+
+import "payment_messages_common.proto";
+
+package payment.messages.user_payment;
+
+message CreateUserPaymentRequest {
+  required string user_id = 1;
+  required int32 value = 2;
+  required string method = 3;
+}
+
+message CreateUserPaymentResponse {
+  required payment.messages.common.UserPayment payment = 1;
+}
+
+message GetUserPaymentRequest {
+  required string payment_id = 1;
+}
+
+message GetUserPaymentResponse {
+  required payment.messages.common.UserPayment payment = 1;
+}
+
+message GetAllUserPaymentsRequest {
+  required string user_id = 1;
+}
+
+message GetAllUserPaymentsResponse {
+  repeated payment.messages.common.UserPayment payments = 1;
+}

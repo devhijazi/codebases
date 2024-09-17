@@ -1,0 +1,5 @@
+.wrapper {
+  @apply flex items-center border-b border-black border-opacity-10 bg-white;
+
+  height: var(--header-height);
+}

@@ -1,0 +1,104 @@
+syntax = "proto2";
+
+package payment.messages.common;
+
+message MarinetesWallet {
+  required string id = 1;
+  optional int32 balance = 2;
+  required string created_at = 3;
+  required string updated_at = 4;
+}
+
+//
+
+message DiaristWallet {
+  required string id = 1;
+  optional int32 balance = 2;
+  required string created_at = 3;
+  required string updated_at = 4;
+}
+
+message DiaristBankData {
+  required string id = 1;
+  required string account_name = 2;
+  required string owner_name = 3;
+  required string document = 4;
+  required string agency = 5;
+  required string account = 6;
+  required string account_digit = 7;
+  required string bank_account_type = 8;
+  optional string bank_code = 9;
+  optional string ispb = 10;
+  required string created_at = 11;
+  required string updated_at = 12;
+}
+
+message DiaristPixData {
+  required string id = 1;
+  required string key = 2;
+  required string key_type = 3;
+  required string created_at = 4;
+  required string updated_at = 5;
+}
+
+message DiaristTransfer {
+  required string id = 1;
+  required string asaas_transfer_id = 2;
+  required int32 total_value = 3;
+  required int32 net_value = 4;
+  optional int32 trasnsfer_fee = 5;
+  required string operation_type = 6;
+  required string status = 7;
+  optional string bank_data_id = 8;
+  optional string pix_data_id = 9;
+  required string diarist_id = 10;
+  required string created_at = 11;
+  required string updated_at = 12;
+} 
+
+//
+
+message UserWallet {
+  required string id = 1;
+  optional int32 balance_available = 2;
+  optional int32 blocked_balance = 3;
+  required string created_at = 4;
+  required string updated_at = 5;
+}
+
+message UserPixData {
+  required string id = 1;
+  required string key = 2;
+  required string key_type = 3;
+  required string created_at = 4;
+  required string updated_at = 5;
+}
+
+message UserTransfer {
+  required string id = 1;
+  required string asaas_transfer_id = 2;
+  required int32 total_value = 3;
+  required int32 net_value = 4;
+  optional int32 trasnsfer_fee = 5;
+  required string operation_type = 6;
+  required string status = 7;
+  optional string bank_data_id = 8;
+  optional string pix_data_id = 9;
+  required string user_id = 10;
+  required string created_at = 11;
+  required string updated_at = 12;
+} 
+
+message UserPayment {
+  required string id = 1;
+  required string asaas_payment_id = 2;
+  required string method = 3;
+  required int32 total_value = 4;
+  required int32 net_value = 5;
+  required string status = 6;
+  optional string pix_qr_code_base64 = 7;
+  optional string pix_copy_and_paste = 8;
+  required string user_id = 9;
+  required string created_at = 10;
+  required string updated_at = 11;
+}

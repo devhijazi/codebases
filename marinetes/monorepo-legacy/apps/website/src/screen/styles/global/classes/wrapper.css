@@ -1,0 +1,20 @@
+.bowl {
+  @apply w-full;
+
+  padding-left: var(--container-spacing);
+  padding-right: var(--container-spacing);
+}
+
+.content {
+  @apply w-full mx-auto;
+
+  max-width: var(--content-max-width);
+}
+
+.bowl-content {
+  @apply mx-auto w-full;
+
+  padding-left: var(--container-spacing);
+  padding-right: var(--container-spacing);
+  max-width: calc(var(--content-max-width) + (var(--container-spacing) * 2));
+}

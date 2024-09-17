@@ -1,0 +1,60 @@
+{
+  "name": "@marinetesio/protos",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "types": "typings/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./grpc": "./dist/grpc.js",
+    "./protobuf": "./dist/protobuf.js"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "typings/index.d.ts"
+      ],
+      "protobuf": [
+        "typings/protobuf.d.ts"
+      ],
+      "grpc": [
+        "typings/grpc.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "typings",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "directory": "packages/protos",
+    "url": "git+https://github.com/marinetesio/packages.git"
+  },
+  "config": {
+    "protocVersion": "3.11.0"
+  },
+  "scripts": {
+    "prepare": "npm run build:protos",
+    "clean": "rimraf dist typings",
+    "build": "run-s clean \"build:{protos,types,files}\"",
+    "build:protos": "node scripts/build-protos.js",
+    "build:types": "tsc --project tsconfig.types.json",
+    "build:files": "node esbuild.config.js"
+  },
+  "peerDependencies": {
+    "@grpc/grpc-js": "^1.8.14"
+  },
+  "dependencies": {
+    "@grpc/proto-loader": "^0.7.6",
+    "@protobuf-ts/runtime": "^2.8.3",
+    "@protobuf-ts/runtime-rpc": "^2.8.3"
+  },
+  "devDependencies": {
+    "@grpc/grpc-js": "^1.8.14",
+    "@protobuf-ts/plugin": "^2.8.3",
+    "@protobuf-ts/protoc": "^2.8.3",
+    "execa": "^5.1.0"
+  }
+}

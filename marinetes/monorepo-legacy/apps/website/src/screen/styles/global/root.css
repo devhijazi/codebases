@@ -1,0 +1,36 @@
+:root {
+  --header-height: 4rem;
+  --container-spacing: 1.4rem;
+  --content-max-width: 1152px;
+}
+
+@screen sm {
+  :root {
+    --container-spacing: 2rem;
+  }
+}
+
+@screen md {
+  :root {
+    --container-spacing: 3.5rem;
+  }
+}
+
+@screen lg {
+  :root {
+    --header-height: 6rem;
+    --container-spacing: 4rem;
+  }
+}
+
+@screen xl {
+  :root {
+    --container-spacing: 5rem;
+  }
+}
+
+@screen 2xl {
+  :root {
+    --container-spacing: 6rem;
+  }
+}

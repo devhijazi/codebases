@@ -1,0 +1,70 @@
+.marineteWrapper {
+  @apply max-w-3xl my-28 order-2 md:order-1 md:my-0;
+  margin-bottom: -7px;
+  @media (max-width: 768px) {
+    margin: 0px 0px -7px 0px;
+  }
+}
+
+.marinete {
+  @media (max-width: 768px) {
+    /* display: none; */
+  }
+}
+
+.mainText {
+  @apply mt-4 text-center font-medium text-xl text-favorite;
+
+  font-size: 1.5rem;
+  max-width: 400px;
+
+  @media (max-width: 768px) {
+    padding-top: 50px;
+  }
+}
+
+.mainLogo {
+  @apply w-44 flex justify-center md:w-full;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.mainRow {
+  @apply flex justify-between items-center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+@screen sm {
+  .marinete {
+    @apply max-w-4xl;
+    bottom: -50px;
+  }
+}
+
+@screen md {
+  .marinete {
+    @apply max-w-7xl;
+    bottom: -80px;
+  }
+}
+
+@screen lg {
+  .marinete {
+    @apply max-w-screen-lg;
+    bottom: -80px;
+  }
+}
+
+@screen 2xl {
+  .main > div:global(.content) {
+    min-height: 80rem;
+  }
+}
+
+.teste {
+  display: none;
+}

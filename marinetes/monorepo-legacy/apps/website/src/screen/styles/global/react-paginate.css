@@ -1,0 +1,27 @@
+.react-paginate {
+  @apply flex flex-row list-none gap-4 items-center;
+}
+
+.react-paginate > li {
+  @apply flex;
+}
+
+.react-paginate > li > a {
+  @apply flex items-center font-bold justify-center py-2 px-4 rounded-md border border-opacity-25 bg-opacity-20 bg-green-500 border-green-500 text-favorite;
+}
+
+.react-paginate-link-active > a {
+  @apply bg-green-500 text-white !important;
+}
+
+.react-paginate > li.previous,
+.react-paginate > li.next {
+  &.react-paginate-link-disabled {
+    @apply hidden invisible;
+  }
+}
+
+.react-paginate-link-disabled a {
+  color: rgb(198, 197, 202);
+  border: 0.1rem solid rgb(198, 197, 202);
+}

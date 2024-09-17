@@ -1,0 +1,25 @@
+.down {
+  --implement-space: 6rem;
+  position: relative;
+  margin-top: calc(var(--implement-space) * -6);
+}
+
+.down:before {
+  @apply bg-favorite;
+  content: '';
+
+  height: 100px;
+
+  bottom: -80px;
+  z-index: -1;
+
+  @media (max-width: 1200px) {
+    bottom: -50px;
+  }
+}
+
+.down-wrapper {
+  @apply pt-5 bg-gradient-to-r from-favorite to-favorite;
+
+  margin-top: calc((1rem * 0.6) * -1);
+}

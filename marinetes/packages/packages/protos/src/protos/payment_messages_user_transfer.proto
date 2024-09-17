@@ -1,0 +1,32 @@
+syntax = "proto2";
+
+import "payment_messages_common.proto";
+
+package payment.messages.user_transfer;
+
+message CreateUserTransferRequest {
+  required string user_id = 1;
+  required int32 value = 2;
+  required string operation_type = 3;
+  optional string pix_data_id = 4;
+}
+
+message CreateUserTransferResponse {
+  required payment.messages.common.UserTransfer transfer = 1;
+}
+
+message GetUserTransferRequest {
+  required string transfer_id = 1;
+}
+
+message GetUserTransferResponse {
+  required payment.messages.common.UserTransfer transfer = 1;
+}
+
+message GetAllUserTransfersRequest {
+  required string user_id = 1;
+}
+
+message GetAllUserTransfersResponse {
+  repeated payment.messages.common.UserTransfer transfers = 1;
+}

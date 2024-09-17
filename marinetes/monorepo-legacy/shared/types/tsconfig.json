@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["al", "dtos", "model", "modules"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@marinetes/types/*": ["*"]
+    }
+  }
+}

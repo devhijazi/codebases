@@ -1,0 +1,88 @@
+:root {
+  --container-spacing: 3rem;
+  --content-max-width: 1440px;
+
+  --wai-height: 45px;
+  --wai-max-width: 300px;
+  --wai-main-border-radius: 8px;
+  --wai-main-border-radius-search: 25px;
+
+  --hub-max-width: 800px;
+  --scrollbar-width: 6px;
+
+  --main-transparency: 10%;
+  --main-border-radius: 3px;
+  --main-bigger-border-radius: 6px;
+
+  --blurred-box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.3);
+
+  --main-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+  --main-right-box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.1);
+  --main-top-box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.1);
+  --main-bottom-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+
+  --strong-box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+  --strong-right-box-shadow: 2px 0 4px 1px rgba(0, 0, 0, 0.3);
+  --strong-top-box-shadow: 0 -2px 4px 1px rgba(0, 0, 0, 0.3);
+  --strong-bottom-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.3);
+
+  --color-favorite-rgb: 76, 136, 128;
+  --color-strong-blue-rgb: 58, 138, 242;
+
+  --color-favorite: #64b60a;
+  --color-light-favorite: #7fbd3b;
+  --color-light-favorite-rgb: 127, 189, 59;
+  --color-main-background: #e5e5e5;
+  --color-input-label: #555555;
+
+  --color-white-rgb: 255, 255, 255;
+  --color-white: #ffffff;
+  --color-strong-blue: #3a8af2;
+  --color-baby-blue: #b5caff;
+  --color-google-blue: #4285f4;
+
+  --color-black: #000000;
+
+  --color-grey: #a4a4a4;
+  --color-teen-grey: #d9d9d9;
+  --color-white-grey: #f0f0f0;
+  --color-strong-grey: #8f8f8f;
+  --color-medium-grey: #181818;
+
+  --color-light-red-rgb: 248, 68, 68;
+  --color-light-green-rgb: 30, 187, 93;
+  --color-light-red: #f84444;
+  --color-light-green: #1ebb5d;
+
+  --color-error: #fa7878;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --box-spacing: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --box-spacing: 35px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --box-spacing: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --box-spacing: 50px;
+  }
+}
+
+@media (min-width: 1536px) {
+  :root {
+    --box-spacing: 60px;
+  }
+}

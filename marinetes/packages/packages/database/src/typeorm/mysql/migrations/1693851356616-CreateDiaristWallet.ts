@@ -1,0 +1,75 @@
+import {
+  MigrationInterface,
+  QueryRunner,
+  Table,
+  TableColumn,
+  TableForeignKey,
+} from 'typeorm';
+
+export class CreateDiaristWallet1693851356616 implements MigrationInterface {
+  public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.createTable(
+      new Table({
+        name: 'diarist_wallet',
+        columns: [
+          {
+            name: 'id',
+            type: 'char(36)',
+            isPrimary: true,
+            isGenerated: true,
+          },
+          {
+            name: 'balance',
+            type: 'int',
+          },
+          {
+            name: 'created_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
+          {
+            name: 'updated_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
+        ],
+      }),
+    );
+
+    await queryRunner.addColumn(
+      'diarists',
+      new TableColumn({
+        name: 'wallet_id',
+        type: 'char(36)',
+        isNullable: true,
+      }),
+    );
+
+    await queryRunner.createForeignKey(
+      'diarists',
+      new TableForeignKey({
+        columnNames: ['wallet_id'],
+        referencedTableName: 'diarist_wallet',
+        referencedColumnNames: ['id'],
+      }),
+    );
+  }
+
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    const table = await queryRunner.getTable('diarists');
+
+    if (table) {
+      const foreignKey = table.foreignKeys.find(
+        ({ columnNames }) => columnNames.indexOf('wallet_id') !== -1,
+      );
+
+      if (foreignKey) {
+        await queryRunner.dropForeignKey('diarists', foreignKey);
+      }
+    }
+
+    await queryRunner.dropColumn('diarists', 'wallet_id');
+
+    await queryRunner.dropTable('diarist_wallet');
+  }
+}

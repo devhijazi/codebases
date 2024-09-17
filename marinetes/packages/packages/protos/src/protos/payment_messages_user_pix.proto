@@ -1,0 +1,59 @@
+syntax = "proto2";
+
+package payment.messages.user_pix;
+
+import "payment_messages_common.proto";
+
+// Create
+
+message CreateUserPixDataRequest {
+  required string user_id = 1;
+  required string key = 2;
+  required string key_type = 3;
+}
+
+message CreateUserPixDataResponse {
+  required string pix_data_id = 1;
+}
+
+// List
+
+message GetAllUserPixDataRequest {
+  required string user_id = 1;
+}
+
+message GetAllUserPixDataResponse {
+  repeated payment.messages.common.UserPixData pixes = 1;
+}
+
+// Get
+
+message GetUserPixDataRequest {
+  required string pix_data_id = 1;
+}
+
+message GetUserPixDataResponse {
+  required payment.messages.common.UserPixData pix_data = 1;
+}
+
+// Update
+
+message UpdateUserPixDataRequest {
+  required string pix_data_id = 1;
+  required string key = 2;
+  required string key_type = 3;
+}
+
+message UpdateUserPixDataResponse {
+  required payment.messages.common.UserPixData pix_data = 1;
+}
+
+// Delete
+
+message DeleteUserPixDataRequest {
+  required string pix_data_id = 1;
+}
+
+message DeleteUserPixDataResponse {
+  required string pix_data_id = 1;
+}

@@ -1,0 +1,32 @@
+syntax = "proto2";
+
+package payment.messages.wallet;
+
+import "payment_messages_common.proto";
+
+message GetMarinetesWalletRequest {
+}
+
+message GetMarinetesWalletResponse {
+  required payment.messages.common.MarinetesWallet wallet = 1;
+}
+
+//
+
+message GetDiaristWalletRequest {
+  required string diarist_id = 1;
+}
+
+message GetDiaristWalletResponse {
+  required payment.messages.common.DiaristWallet wallet = 1;
+}
+
+//
+
+message GetUserWalletRequest {
+  required string user_id = 1;
+}
+
+message GetUserWalletResponse {
+  required payment.messages.common.UserWallet wallet = 1;
+}

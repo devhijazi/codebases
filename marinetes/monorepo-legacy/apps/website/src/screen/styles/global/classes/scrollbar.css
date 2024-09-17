@@ -1,0 +1,21 @@
+.pretty-scrollbar::-webkit-scrollbar {
+  width: 1.2rem;
+}
+
+.pretty-scrollbar::-webkit-scrollbar-corner,
+.pretty-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.pretty-scrollbar::-webkit-scrollbar-thumb {
+  min-height: 4rem;
+  background-color: #c9c9c9;
+}
+
+.pretty-scrollbar::-webkit-scrollbar-thumb,
+.pretty-scrollbar::-webkit-scrollbar-track {
+  @apply rounded-full;
+
+  border: 0.26rem solid transparent;
+  background-clip: padding-box;
+}

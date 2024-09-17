@@ -1,0 +1,17 @@
+html,
+body {
+  font-display: optional;
+}
+
+body {
+  @apply pretty-scrollbar break-words antialiased text-black bg-white;
+
+  text-rendering: optimizeLegibility;
+}
+
+a,
+input,
+button,
+textarea {
+  color: currentColor;
+}

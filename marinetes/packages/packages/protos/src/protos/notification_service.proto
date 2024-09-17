@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+package notification;
+
+import "common_messages.proto";
+
+service NotificationService {
+  rpc CreateNotification (CreateNotificationRequest) returns (CreateNotificationResponse);
+}
+
+message CreateNotificationRequest {
+  required string category = 1;
+  optional string action = 2;
+  required string content = 3;
+  optional string metadata = 4;
+  optional string user_id = 5;
+}
+
+message CreateNotificationResponse {
+  required common.Notification notification = 1;
+}

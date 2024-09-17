@@ -1,0 +1,73 @@
+syntax = "proto2";
+
+package payment.messages.diarist_bank;
+
+import "payment_messages_common.proto";
+
+// Create
+
+message CreateDiaristBankDataRequest {
+  required string diarist_id = 1;
+  required string account_name = 2;
+  required string owner_name = 3;
+  required string agency = 4;
+  required string account = 5;
+  required string account_digit = 6;
+  required string account_type = 7;
+  optional string bank_code = 8;
+  optional string ispb = 9;
+  required string document = 10;
+}
+
+message CreateDiaristBankDataResponse {
+  required string bank_data_id = 1;
+}
+
+// List
+
+message GetAllDiaristBankDataRequest {
+  required string diarist_id = 1;
+}
+
+message GetAllDiaristBankDataResponse {
+  repeated payment.messages.common.DiaristBankData banks = 1;
+}
+
+// Get
+
+message GetDiaristBankDataRequest {
+  required string bank_data_id = 1;
+}
+
+message GetDiaristBankDataResponse {
+  required payment.messages.common.DiaristBankData bank_data = 1;
+}
+
+// Update
+
+message UpdateDiaristBankDataRequest {
+  required string bank_data_id = 1;
+  required string account_name = 2;
+  required string owner_name = 3;
+  required string agency = 4;
+  required string account = 5;
+  required string account_digit = 6;
+  required string account_type = 7;
+  optional string bank_code = 8;
+  optional string ispb = 9;
+  required string document = 10;
+}
+
+message UpdateDiaristBankDataResponse {
+  required payment.messages.common.DiaristBankData bank_data = 1;
+}
+
+// Delete
+
+message DeleteDiaristBankDataRequest {
+  required string bank_data_id = 1;
+}
+
+message DeleteDiaristBankDataResponse {
+  required string bank_data_id = 1;
+}

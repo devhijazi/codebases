@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package common;
+
+message Notification {
+  required string id = 1;
+  required string category = 2;
+  optional string action = 3;
+  required string content = 4;
+  optional string metadata = 5;
+  required string created_at = 6;
+  required string updated_at = 7;
+}
+
+//
+
+message Image {
+  required string name = 1;
+  required string type = 2;
+  required uint32 size = 3;
+  required string url = 4;
+}

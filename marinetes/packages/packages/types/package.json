@@ -1,0 +1,191 @@
+{
+  "name": "@marinetesio/types",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "exports": {
+    "./all/*": "./dist/all/*.js",
+    "./all": "./dist/all/index.js",
+    "./dtos/mixin/*": "./dist/dtos/mixin/*.js",
+    "./dtos/scheduling-service": "./dist/dtos/scheduling-service/index.js",
+    "./dtos/scheduling-service/*": "./dist/dtos/scheduling-service/*.js",
+    "./dtos/services-list-service": "./dist/dtos/services-list-service/index.js",
+    "./dtos/services-list-service/*": "./dist/dtos/services-list-service/*.js",
+    "./dtos/diarist/api": "./dist/dtos/diarist/api/index.js",
+    "./dtos/diarist/api/*": "./dist/dtos/diarist/api/*.js",
+    "./dtos/financial/api": "./dist/dtos/financial/api/index.js",
+    "./dtos/financial/api/*": "./dist/dtos/financial/api/*.js",
+    "./dtos/scheduling-service/http/*": "./dist/dtos/scheduling-service/http/*.js",
+    "./dtos/scheduling-service/http": "./dist/dtos/scheduling-service/http/index.js",
+    "./dtos/scheduling-service/services/*": "./dist/dtos/scheduling-service/services/*.js",
+    "./dtos/scheduling-service/services": "./dist/dtos/scheduling-service/services/index.js",
+    "./dtos/services-list-service/document/*": "./dist/dtos/services-list-service/document/*.js",
+    "./dtos/services-list-service/document": "./dist/dtos/services-list-service/document/index.js",
+    "./dtos/user/api": "./dist/dtos/user/api/index.js",
+    "./dtos/user/api/*": "./dist/dtos/user/api/*.js",
+    "./dtos/diarist/api/data/*": "./dist/dtos/diarist/api/data/*.js",
+    "./dtos/diarist/api/data": "./dist/dtos/diarist/api/data/index.js",
+    "./dtos/diarist/api/document/*": "./dist/dtos/diarist/api/document/*.js",
+    "./dtos/diarist/api/document": "./dist/dtos/diarist/api/document/index.js",
+    "./dtos/financial/api/data/*": "./dist/dtos/financial/api/data/*.js",
+    "./dtos/financial/api/data": "./dist/dtos/financial/api/data/index.js",
+    "./dtos/financial/api/document/*": "./dist/dtos/financial/api/document/*.js",
+    "./dtos/financial/api/document": "./dist/dtos/financial/api/document/index.js",
+    "./dtos/user/api/data/*": "./dist/dtos/user/api/data/*.js",
+    "./dtos/user/api/data": "./dist/dtos/user/api/data/index.js",
+    "./dtos/user/api/document/*": "./dist/dtos/user/api/document/*.js",
+    "./dtos/user/api/document": "./dist/dtos/user/api/document/index.js",
+    "./model/*": "./dist/model/*.js",
+    "./model": "./dist/model/index.js",
+    "./model/entities/*": "./dist/model/entities/*.js",
+    "./model/firebase/*": "./dist/model/firebase/*.js",
+    "./model/firebase": "./dist/model/firebase/index.js",
+    "./modules/react/*": "./dist/modules/react/*.js",
+    "./modules/react": "./dist/modules/react/index.js",
+    "./modules/yup": "./dist/modules/yup/index.js",
+    "./modules/yup/*": "./dist/modules/yup/*.js"
+  },
+  "typesVersions": {
+    "*": {
+      "all/*": [
+        "./dist/all/*"
+      ],
+      "all": [
+        "./dist/all/index.d.ts"
+      ],
+      "dtos/mixin/*": [
+        "./dist/dtos/mixin/*"
+      ],
+      "dtos/scheduling-service": [
+        "./dist/dtos/scheduling-service/index.d.ts"
+      ],
+      "dtos/scheduling-service/*": [
+        "./dist/dtos/scheduling-service/*"
+      ],
+      "dtos/services-list-service": [
+        "./dist/dtos/services-list-service/index.d.ts"
+      ],
+      "dtos/services-list-service/*": [
+        "./dist/dtos/services-list-service/*"
+      ],
+      "dtos/diarist/api": [
+        "./dist/dtos/diarist/api/index.d.ts"
+      ],
+      "dtos/diarist/api/*": [
+        "./dist/dtos/diarist/api/*"
+      ],
+      "dtos/financial/api": [
+        "./dist/dtos/financial/api/index.d.ts"
+      ],
+      "dtos/financial/api/*": [
+        "./dist/dtos/financial/api/*"
+      ],
+      "dtos/scheduling-service/http/*": [
+        "./dist/dtos/scheduling-service/http/*"
+      ],
+      "dtos/scheduling-service/http": [
+        "./dist/dtos/scheduling-service/http/index.d.ts"
+      ],
+      "dtos/scheduling-service/services/*": [
+        "./dist/dtos/scheduling-service/services/*"
+      ],
+      "dtos/scheduling-service/services": [
+        "./dist/dtos/scheduling-service/services/index.d.ts"
+      ],
+      "dtos/services-list-service/document/*": [
+        "./dist/dtos/services-list-service/document/*"
+      ],
+      "dtos/services-list-service/document": [
+        "./dist/dtos/services-list-service/document/index.d.ts"
+      ],
+      "dtos/user/api": [
+        "./dist/dtos/user/api/index.d.ts"
+      ],
+      "dtos/user/api/*": [
+        "./dist/dtos/user/api/*"
+      ],
+      "dtos/diarist/api/data/*": [
+        "./dist/dtos/diarist/api/data/*"
+      ],
+      "dtos/diarist/api/data": [
+        "./dist/dtos/diarist/api/data/index.d.ts"
+      ],
+      "dtos/diarist/api/document/*": [
+        "./dist/dtos/diarist/api/document/*"
+      ],
+      "dtos/diarist/api/document": [
+        "./dist/dtos/diarist/api/document/index.d.ts"
+      ],
+      "dtos/financial/api/data/*": [
+        "./dist/dtos/financial/api/data/*"
+      ],
+      "dtos/financial/api/data": [
+        "./dist/dtos/financial/api/data/index.d.ts"
+      ],
+      "dtos/financial/api/document/*": [
+        "./dist/dtos/financial/api/document/*"
+      ],
+      "dtos/financial/api/document": [
+        "./dist/dtos/financial/api/document/index.d.ts"
+      ],
+      "dtos/user/api/data/*": [
+        "./dist/dtos/user/api/data/*"
+      ],
+      "dtos/user/api/data": [
+        "./dist/dtos/user/api/data/index.d.ts"
+      ],
+      "dtos/user/api/document/*": [
+        "./dist/dtos/user/api/document/*"
+      ],
+      "dtos/user/api/document": [
+        "./dist/dtos/user/api/document/index.d.ts"
+      ],
+      "model/*": [
+        "./dist/model/*"
+      ],
+      "model": [
+        "./dist/model/index.d.ts"
+      ],
+      "model/entities/*": [
+        "./dist/model/entities/*"
+      ],
+      "model/firebase/*": [
+        "./dist/model/firebase/*"
+      ],
+      "model/firebase": [
+        "./dist/model/firebase/index.d.ts"
+      ],
+      "modules/react/*": [
+        "./dist/modules/react/*"
+      ],
+      "modules/react": [
+        "./dist/modules/react/index.d.ts"
+      ],
+      "modules/yup": [
+        "./dist/modules/yup/index.d.ts"
+      ],
+      "modules/yup/*": [
+        "./dist/modules/yup/*"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "directory": "packages/types",
+    "url": "git+https://github.com/marinetesio/packages.git"
+  },
+  "scripts": {
+    "clean": "rimraf dist dist",
+    "build:types": "tsc --project tsconfig.types.json",
+    "build:files": "node esbuild.config.js",
+    "build": "run-s clean \"build:{types,files}\""
+  },
+  "devDependencies": {
+    "@types/react": "17.0.52",
+    "react": "17.0.2",
+    "yup": "0.32.11"
+  }
+}

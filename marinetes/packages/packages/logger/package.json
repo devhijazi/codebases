@@ -1,0 +1,27 @@
+{
+  "name": "@marinetesio/logger",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "typings/index.d.ts",
+  "files": [
+    "dist",
+    "typings",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "directory": "packages/logger",
+    "url": "git+https://github.com/marinetesio/packages.git"
+  },
+  "scripts": {
+    "clean": "rimraf dist typings",
+    "build": "run-s clean \"build:{types,files}\"",
+    "build:types": "tsc --project tsconfig.types.json",
+    "build:files": "node esbuild.config.js"
+  },
+  "dependencies": {
+    "colorette": "^2.0.20"
+  }
+}

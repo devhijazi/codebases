@@ -1,0 +1,16 @@
+# Dependency Directories
+node_modules/
+jspm_packages/
+
+# Next.JS
+__next/
+
+# Generated Sitemap
+public/sitemap.xml
+
+# PWA
+/public/workbox-*.js
+/public/workbox-*.js.map
+
+/public/service-worker.js
+/public/service-worker.js.map

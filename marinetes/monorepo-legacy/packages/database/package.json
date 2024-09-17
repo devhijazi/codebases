@@ -1,0 +1,42 @@
+{
+  "name": "@marinetes/database",
+  "version": "0.0.0",
+  "license": "HTL",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "typings/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./eslint": "./eslint/config.js"
+  },
+  "scripts": {
+    "to": "yarn ts-node-dev ../../node_modules/typeorm/cli.js --config common/gen-config.ts",
+    "sync": "yarn to migration:run",
+    "clean": "run -T rimraf dist typings",
+    "build": "run -T run-s clean \"build:{types,files}\"",
+    "build:types": "run -T tsc --project tsconfig.types.json",
+    "build:files": "node build/build"
+  },
+  "repository": {
+    "type": "git",
+    "directory": "packages/database",
+    "url": "git+https://github.com/hitechline-cp/marinetes"
+  },
+  "peerDependencies": {
+    "typeorm": "^0.2.36"
+  },
+  "dependencies": {
+    "@marinetes/errors": "*",
+    "@marinetes/password-helper": "*",
+    "typeorm-naming-strategies": "^2.0.0",
+    "uuidv4": "^6.2.12"
+  },
+  "devDependencies": {
+    "@marinetes/types": "*",
+    "@marinetes/utils": "*",
+    "dotenv": "^14.3.2",
+    "fast-glob": "^3.2.11",
+    "ts-node-dev": "^1.1.8",
+    "typeorm": "^0.2.41"
+  }
+}

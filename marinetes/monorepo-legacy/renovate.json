@@ -1,0 +1,8 @@
+{
+  "dependencyDashboard": true,
+  "dependencyDashboardApproval": true,
+  "extends": ["@hitechline", "group:all", ":preserveSemverRanges"],
+  "lockFileMaintenance": {
+    "extends": ["schedule:monthly"]
+  }
+}

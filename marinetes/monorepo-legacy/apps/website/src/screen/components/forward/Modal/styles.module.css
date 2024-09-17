@@ -1,0 +1,5 @@
+.container {
+  @apply fixed flex w-screen h-full top-0 left-0 items-center justify-center;
+
+  z-index: 333;
+}

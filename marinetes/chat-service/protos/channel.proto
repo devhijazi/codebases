@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package channel;
+
+import "entities.proto";
+
+service ChannelService {
+  rpc CreateChannel (CreateChannelRequest) returns (CreateChannelResponse);
+  rpc ListChannels (ListChannelsRequest) returns (ListChannelsResponse);
+  rpc ChannelInfo (ChannelInfoRequest) returns (ChannelInfoResponse);
+  rpc UpdateChannel (UpdateChannelRequest) returns (UpdateChannelResponse);
+  rpc DeleteChannel (DeleteChannelRequest) returns (DeleteChannelResponse);
+}
+
+//
+
+message CreateChannelRequest {
+  string userId = 1;
+  string diaristId = 2;
+}
+
+message ListChannelsRequest {}
+
+message ChannelInfoRequest {
+  string channelId = 1;
+}
+
+message UpdateChannelRequest {
+  string channelId = 1;
+
+  ChannelStatus status = 2;
+}
+
+message DeleteChannelRequest {
+  string channelId = 1;
+}
+
+//
+
+message CreateChannelResponse {
+  Channel channel = 1;
+}
+
+message ListChannelsResponse {
+  repeated Channel channels = 1;
+}
+
+message ChannelInfoResponse {
+  Channel channel = 1;
+}
+
+message UpdateChannelResponse {
+  Channel channel = 1;
+}
+
+message DeleteChannelResponse {}

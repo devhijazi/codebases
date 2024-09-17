@@ -1,0 +1,13 @@
+.navigation-button {
+  @apply hidden flex-shrink-0 text-favorite;
+
+  &[disabled] {
+    @apply text-black text-opacity-25 cursor-default;
+  }
+}
+
+@screen lg {
+  .navigation-button {
+    @apply block;
+  }
+}

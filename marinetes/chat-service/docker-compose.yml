@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  mongo:
+    container_name: marinetes-mongo
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: docker
+    ports:
+      - "27017:27017"
+  envoy:
+    container_name: marinetes-envoy
+    image: hitechlinetecnologia/marinetes-envoy:latest
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.envoy
+      args:
+        ENVOY_ADMIN_PORT: 9002
+        ENVOY_LISTENER_PORT: 9001
+        MARINETES_CHAT_SERVICE_HOST: chat
+        MARINETES_CHAT_SERVICE_PORT: 4446
+    ports:
+      - "9001:9001"
+      - "9002:9002"
+  chat:
+    container_name: marinetes-chat-service
+    image: hitechlinetecnologia/marinetes-chat-service:latest
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.chat
+    environment:
+      MONGO_URL: mongodb://root:docker@mongo:27017/chat
+    depends_on:
+      - mongo
+    ports:
+      - "4446:4446"

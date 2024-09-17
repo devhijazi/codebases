@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package cdn;
+
+import "common_messages.proto";
+
+service CdnService {
+  rpc UploadImage (UploadImageRequest) returns (UploadImageResponse);
+}
+
+message UploadImageRequest {
+  required string name = 1;
+  required string type = 2;
+  required uint32 size = 3;
+  required bytes chunk = 4;
+}
+
+message UploadImageResponse {
+  required common.Image image = 1;
+}

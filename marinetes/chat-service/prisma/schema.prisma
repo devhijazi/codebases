@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGO_URL")
+}
+
+enum UserStatus {
+  NONE
+  OFFLINE
+  IDLE
+  ONLINE
+}
+
+enum MessageStatus {
+  NONE
+  NOT_READ
+  READ
+}
+
+enum ChannelStatus {
+  NONE
+  OPEN
+  CLOSED
+}
+
+model Channel {
+  id        String        @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String
+  diaristId String
+  status    ChannelStatus
+  messages  Message[]
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+}
+
+model Message {
+  id        String        @id @default(auto()) @map("_id") @db.ObjectId
+  content   String
+  authorId  String
+  channelId String        @db.ObjectId
+  status    MessageStatus
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  channel   Channel?      @relation(fields: [channelId], references: [id])
+}

@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build Docker Image') {
+            steps {
+                script {
+					dockerapp = docker.build("hitechlinetecnologia/marinetes-chat-service:latest", '-f ./Dockerfile .')
+				}
+            }
+        }
+
+		stage('Push Docker Image') {
+			steps {
+				script {
+					docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+						dockerapp.push('latest')
+					}
+				}
+			}
+		}
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "src/prisma/mongo/generated",
+    "src/typeorm/mysql/common",
+    "src/typeorm/mysql/fixtures",
+    "src/typeorm/mysql/migrastions"
+  ],
+  "compilerOptions": {
+    "declarationDir": "typings",
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true
+  }
+}

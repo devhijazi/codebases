@@ -1,0 +1,13 @@
+body {
+  overflow-x: hidden;
+  font-family: Poppins, sans-serif;
+
+  color: var(--color-black);
+}
+
+a,
+input,
+button,
+textarea {
+  font-family: unset, -apple-system, sans-serif;
+}

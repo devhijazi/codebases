@@ -1,0 +1,21 @@
+FROM envoyproxy/envoy:v1.24.0
+
+ARG ENVOY_ADMIN_PORT
+ARG ENVOY_LISTENER_PORT
+
+ARG MARINETES_CHAT_SERVICE_HOST
+ARG MARINETES_CHAT_SERVICE_PORT
+
+COPY envoy-proxy.yaml /etc/envoy-proxy.yaml
+
+RUN sed -i "s|ENVOY_ADMIN_PORT|$ENVOY_ADMIN_PORT|" /etc/envoy-proxy.yaml
+RUN sed -i "s|ENVOY_LISTENER_PORT|$ENVOY_LISTENER_PORT|" /etc/envoy-proxy.yaml
+RUN sed -i "s|MARINETES_CHAT_SERVICE_HOST|$MARINETES_CHAT_SERVICE_HOST|" /etc/envoy-proxy.yaml
+RUN sed -i "s|MARINETES_CHAT_SERVICE_PORT|$MARINETES_CHAT_SERVICE_PORT|" /etc/envoy-proxy.yaml
+
+RUN chmod go+r /etc/envoy-proxy.yaml
+
+EXPOSE $ENVOY_ADMIN_PORT
+EXPOSE $ENVOY_LISTENER_PORT
+
+CMD ["/usr/local/bin/envoy", "-c", "/etc/envoy-proxy.yaml"]

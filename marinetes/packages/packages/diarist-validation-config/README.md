@@ -1,0 +1,1 @@
+# @marinetesio/diarist-validation-config

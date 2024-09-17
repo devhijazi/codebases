@@ -1,0 +1,13 @@
+.wrapper {
+  @apply relative text-black bg-white border-b border-black border-opacity-10;
+
+  height: var(--header-height);
+}
+
+.dropdown {
+  --tw-backdrop-filter: blur(0.28rem);
+
+  @apply fixed w-full py-10 backdrop-filter border-t border-black border-opacity-10 bg-opacity-90 bg-white;
+
+  height: calc(100% - var(--header-height));
+}

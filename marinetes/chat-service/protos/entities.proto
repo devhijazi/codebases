@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+enum UserStatus {
+  USER_STATUS_NONE = 0;
+  OFFLINE = 1;
+  IDLE = 2;
+  ONLINE = 3;
+}
+
+enum MessageStatus {
+  MESSAGE_STATUS_NONE = 0;
+  NOT_READ = 1;
+  READ = 2;
+}
+
+enum ChannelStatus {
+  CHANNEL_STATUS_NONE = 0;
+  OPEN = 1;
+}
+
+message Message {
+  string id = 1;
+
+  string content = 2;
+  string authorId = 3;
+  string channelId = 4;
+
+  MessageStatus status = 5;
+
+  google.protobuf.Timestamp createdAt = 6;
+  google.protobuf.Timestamp updatedAt = 7;
+}
+
+message Channel {
+  string id = 1;
+
+  string userId = 2;
+  string diaristId = 3;
+
+  ChannelStatus status = 4;
+
+  repeated Message messages = 5;
+
+  google.protobuf.Timestamp createdAt = 6;
+  google.protobuf.Timestamp updatedAt = 7;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@marinetes/mail-provider",
+  "version": "0.0.0",
+  "license": "HTL",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "typings/index.d.ts",
+  "scripts": {
+    "clean": "run -T rimraf dist typings",
+    "build": "run -T run-s clean \"build:{types,files}\"",
+    "build:files": "run -T esbuild src/index.ts --outfile=dist/index.js --bundle --minify --sourcemap --keep-names --platform=node --target=es2015 --format=cjs --external:handlebars --external:html-to-text --external:nodemailer",
+    "build:types": "run -T tsc --project tsconfig.types.json"
+  },
+  "repository": {
+    "type": "git",
+    "directory": "packages/mail-provider",
+    "url": "git+https://github.com/hitechline-cp/marinetes"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.7",
+    "html-to-text": "^8.2.0",
+    "nodemailer": "^6.7.5"
+  },
+  "devDependencies": {
+    "@marinetes/types": "*"
+  }
+}

@@ -1,0 +1,14 @@
+.blog-wrap ol,
+.blog-wrap ul {
+  @apply list-inside;
+
+  list-style-type: inherit;
+}
+
+.blog-wrap a {
+  @apply text-favorite;
+}
+
+.blog-content {
+  @apply mx-auto w-full max-w-6xl mt-8 text-lg md:text-xl leading-relaxed space-y-4;
+}

@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package message;
+
+import "entities.proto";
+
+service MessageService {
+  rpc CreateMessage (CreateMessageRequest) returns (CreateMessageResponse);
+  rpc ListMessages (ListMessagesRequest) returns (ListMessagesResponse);
+  rpc ReceiveMessage (ReceiveMessageRequest) returns (stream ReceiveMessageResponse);
+}
+
+//
+
+message CreateMessageRequest {
+  string content = 2;
+  string authorId = 3;
+  string channelId = 4;
+}
+
+message ListMessagesRequest {
+  string channelId = 1;
+}
+
+message ReceiveMessageRequest {
+  string channelId = 1;
+}
+
+//
+
+message CreateMessageResponse {
+  Message messages = 1;
+}
+
+message ListMessagesResponse {
+  repeated Message messages = 1;
+}
+
+message ReceiveMessageResponse {
+  Message messages = 1;
+}

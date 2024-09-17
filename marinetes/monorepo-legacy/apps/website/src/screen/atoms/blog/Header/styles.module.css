@@ -1,0 +1,14 @@
+.input {
+  @apply outline-none py-2 px-6 rounded-full w-full border border-opacity-20 border-black;
+
+  height: var(--wai-min-height);
+}
+
+.submit-button {
+  --size: calc(var(--wai-min-height) - 0.25rem);
+
+  @apply absolute flex items-center justify-center transform right-2 top-2/4 -translate-y-2/4 rounded-full bg-opacity-0 bg-green-200 hover:bg-opacity-20;
+
+  width: var(--size);
+  height: var(--size);
+}

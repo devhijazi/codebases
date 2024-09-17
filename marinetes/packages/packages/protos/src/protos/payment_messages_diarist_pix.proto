@@ -1,0 +1,59 @@
+syntax = "proto2";
+
+package payment.messages.diarist_pix;
+
+import "payment_messages_common.proto";
+
+// Create
+
+message CreateDiaristPixDataRequest {
+  required string diarist_id = 1;
+  required string key = 2;
+  required string key_type = 3;
+}
+
+message CreateDiaristPixDataResponse {
+  required string pix_data_id = 1;
+}
+
+// List
+
+message GetAllDiaristPixDataRequest {
+  required string diarist_id = 1;
+}
+
+message GetAllDiaristPixDataResponse {
+  repeated payment.messages.common.DiaristPixData pixes = 1;
+}
+
+// Get
+
+message GetDiaristPixDataRequest {
+  required string pix_data_id = 1;
+}
+
+message GetDiaristPixDataResponse {
+  required payment.messages.common.DiaristPixData pix_data = 1;
+}
+
+// Update
+
+message UpdateDiaristPixDataRequest {
+  required string pix_data_id = 1;
+  required string key = 2;
+  required string key_type = 3;
+}
+
+message UpdateDiaristPixDataResponse {
+  required payment.messages.common.DiaristPixData pix_data = 1;
+}
+
+// Delete
+
+message DeleteDiaristPixDataRequest {
+  required string pix_data_id = 1;
+}
+
+message DeleteDiaristPixDataResponse {
+  required string pix_data_id = 1;
+}

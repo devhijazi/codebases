@@ -1,0 +1,5 @@
+node_modules
+dist
+typings
+packages/database/src/prisma/mongo/generated
+packages/protos/src/protos/generated

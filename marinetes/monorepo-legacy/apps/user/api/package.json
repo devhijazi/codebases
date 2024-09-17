@@ -1,0 +1,59 @@
+{
+  "name": "@marinetes/user-api",
+  "version": "0.0.0",
+  "license": "HTL",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --no-notify --transpile-only -r tsconfig-paths/register src/server.ts",
+    "creation": "node ./bin/creation"
+  },
+  "repository": {
+    "type": "git",
+    "directory": "apps/user/api",
+    "url": "git+https://github.com/hitechline-cp/marinetes.git"
+  },
+  "dependencies": {
+    "@marinetes/database": "*",
+    "@marinetes/errors": "*",
+    "@marinetes/firebase": "*",
+    "@marinetes/pagination-helper": "*",
+    "@marinetes/password-helper": "*",
+    "@marinetes/utils": "*",
+    "@marinetes/validation-is-expired": "*",
+    "@supercharge/strings": "^1.28.0",
+    "aws-sdk": "2.879.0",
+    "bcryptjs": "2.4.3",
+    "class-transformer": "^0.5.1",
+    "cors": "^2.8.5",
+    "date-fns": "^2.28.0",
+    "date-fns-tz": "^1.3.4",
+    "dotenv-defaults": "^3.0.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "juice": "^8.0.0",
+    "kafkajs": "^2.2.0",
+    "multer": "1.4.2",
+    "multer-s3": "2.9.0",
+    "mysql2": "^2.2.5",
+    "nanoid": "^3.3.4",
+    "reflect-metadata": "0.1.13",
+    "typeorm": "^0.2.41",
+    "yup": "0.32.9"
+  },
+  "devDependencies": {
+    "@marinetes/types": "*",
+    "@types/aws-sdk": "2.7.0",
+    "@types/bcryptjs": "2.4.2",
+    "@types/cors": "2.8.10",
+    "@types/dotenv-defaults": "2.0.0",
+    "@types/express": "4.17.11",
+    "@types/html-to-text": "^8.1.0",
+    "@types/jsonwebtoken": "8.5.1",
+    "@types/multer": "1.4.5",
+    "@types/multer-s3": "2.7.9",
+    "gluegun": "^4.6.1",
+    "ts-node": "^10.2.0",
+    "ts-node-dev": "1.1.6",
+    "tsconfig-paths": "3.9.0"
+  }
+}

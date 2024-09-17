@@ -1,0 +1,33 @@
+syntax = "proto2";
+
+import "payment_messages_common.proto";
+
+package payment.messages.diarist_transfer;
+
+message CreateDiaristTransferRequest {
+  required string diarist_id = 1;
+  required int32 value = 2;
+  required string operation_type = 3;
+  optional string pix_data_id = 4;
+  optional string bank_data_id = 5;
+}
+
+message CreateDiaristTransferResponse {
+  required payment.messages.common.DiaristTransfer transfer = 1;
+}
+
+message GetDiaristTransferRequest {
+  required string transfer_id = 1;
+}
+
+message GetDiaristTransferResponse {
+  required payment.messages.common.DiaristTransfer transfer = 1;
+}
+
+message GetAllDiaristTransfersRequest {
+  required string diarist_id = 1;
+}
+
+message GetAllDiaristTransfersResponse {
+  repeated payment.messages.common.DiaristTransfer transfers = 1;
+}

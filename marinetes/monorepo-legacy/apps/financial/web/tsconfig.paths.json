@@ -1,0 +1,14 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"],
+      "@pages/*": ["pages/*"],
+      "@store/*": ["store/*"],
+      "@screen/*": ["screen/*"],
+      "@modules/*": ["modules/*"],
+      "@resources/*": ["resources/*"]
+    }
+  }
+}

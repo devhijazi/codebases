@@ -1,0 +1,59 @@
+{
+  "name": "@marinetesio/database",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "exports": {
+    "./typeorm/mysql": "./dist/typeorm/mysql/index.js",
+    "./prisma/mongo": "./dist/prisma/mongo/index.js"
+  },
+  "typesVersions": {
+    "*": {
+      "typeorm/mysql": [
+        "typings/typeorm/mysql/index.d.ts"
+      ],
+      "prisma/mongo": [
+        "typings/prisma/mongo/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "typings",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "directory": "packages/database",
+    "url": "git+https://github.com/marinetesio/packages.git"
+  },
+  "scripts": {
+    "prepare": "run-s prisma:mongo:generate",
+    "clean": "rimraf dist typings src/prisma/mongo/generated",
+    "typeorm:mysql": "npx ts-node-dev ../../node_modules/typeorm/cli.js --config src/typeorm/mysql/common/gen-config.ts",
+    "typeorm:mysql:migration:run": "npm run typeorm:mysql migration:run",
+    "prisma:mongo:generate": "npx prisma generate --schema src/prisma/mongo/schema.prisma",
+    "prisma:mongo:db:push:mongo": "npx prisma db push --skip-generate --schema src/prisma/mongo/schema.prisma",
+    "build:types": "tsc --project tsconfig.types.json",
+    "build:files": "node esbuild.config.js",
+    "build": "run-s clean prisma:mongo:generate \"build:{types,files}\""
+  },
+  "peerDependencies": {
+    "typeorm": "^0.2.36"
+  },
+  "dependencies": {
+    "@marinetesio/errors": "0.1.0",
+    "@marinetesio/logger": "0.0.1",
+    "@marinetesio/password-helper": "0.1.0",
+    "@marinetesio/types": "0.1.0",
+    "@prisma/client": "^5.1.1",
+    "typeorm-naming-strategies": "2.0.0",
+    "uuidv4": "6.2.13"
+  },
+  "devDependencies": {
+    "dotenv": "16.0.3",
+    "mysql2": "2.3.3",
+    "prisma": "^5.1.1",
+    "ts-node-dev": "^2.0.0",
+    "typeorm": "0.2.45"
+  }
+}

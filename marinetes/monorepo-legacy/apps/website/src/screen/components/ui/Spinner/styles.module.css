@@ -1,0 +1,9 @@
+.container {
+  --alpha: rgba(0, 0, 0, 0.06);
+
+  @apply w-12 h-12 animate-spin border-4 flex-shrink-0 rounded-full border-t-white;
+
+  border-left-color: var(--alpha);
+  border-right-color: var(--alpha);
+  border-bottom-color: var(--alpha);
+}

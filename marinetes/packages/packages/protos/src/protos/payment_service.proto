@@ -1,0 +1,67 @@
+syntax = "proto2";
+
+import "payment_messages_wallet.proto";
+
+import "payment_messages_diarist_pix.proto";
+// import "payment_messages_diarist_bank.proto";
+import "payment_messages_diarist_transfer.proto";
+
+import "payment_messages_user_pix.proto";
+import "payment_messages_user_transfer.proto";
+import "payment_messages_user_payment.proto";
+
+package payment;
+
+service PaymentService {  
+  // Wallet
+  
+  rpc GetMarinetesWallet (payment.messages.wallet.GetMarinetesWalletRequest) returns (payment.messages.wallet.GetMarinetesWalletResponse);
+  rpc GetUserWallet (payment.messages.wallet.GetUserWalletRequest) returns (payment.messages.wallet.GetUserWalletResponse);
+  rpc GetDiaristWallet (payment.messages.wallet.GetDiaristWalletRequest) returns (payment.messages.wallet.GetDiaristWalletResponse);
+  
+  // Diarist
+  
+  //    Diarist Bank Data
+  
+  // rpc CreateDiaristBankData (payment.messages.diarist_bank.CreateDiaristBankDataRequest) returns (payment.messages.diarist_bank.CreateDiaristBankDataResponse);
+  // rpc GetAllDiaristBankData (payment.messages.diarist_bank.GetAllDiaristBankDataRequest) returns (payment.messages.diarist_bank.GetAllDiaristBankDataResponse);
+  // rpc GetDiaristBankData (payment.messages.diarist_bank.GetDiaristBankDataRequest) returns (payment.messages.diarist_bank.GetDiaristBankDataResponse);
+  // rpc UpdateDiaristBankData (payment.messages.diarist_bank.UpdateDiaristBankDataRequest) returns (payment.messages.diarist_bank.UpdateDiaristBankDataResponse);
+  // rpc DeleteDiaristBankData (payment.messages.diarist_bank.DeleteDiaristBankDataRequest) returns (payment.messages.diarist_bank.DeleteDiaristBankDataResponse);
+  
+  //    Diarist Pix Data
+  
+  rpc CreateDiaristPixData (payment.messages.diarist_pix.CreateDiaristPixDataRequest) returns (payment.messages.diarist_pix.CreateDiaristPixDataResponse);
+  rpc GetAllDiaristPixData (payment.messages.diarist_pix.GetAllDiaristPixDataRequest) returns (payment.messages.diarist_pix.GetAllDiaristPixDataResponse);
+  rpc GetDiaristPixData (payment.messages.diarist_pix.GetDiaristPixDataRequest) returns (payment.messages.diarist_pix.GetDiaristPixDataResponse);
+  rpc UpdateDiaristPixData (payment.messages.diarist_pix.UpdateDiaristPixDataRequest) returns (payment.messages.diarist_pix.UpdateDiaristPixDataResponse);
+  rpc DeleteDiaristPixData (payment.messages.diarist_pix.DeleteDiaristPixDataRequest) returns (payment.messages.diarist_pix.DeleteDiaristPixDataResponse);
+  
+  //    Diarist Transfer
+  
+  rpc CreateDiaristTransfer (payment.messages.diarist_transfer.CreateDiaristTransferRequest) returns (payment.messages.diarist_transfer.CreateDiaristTransferResponse);
+  rpc GetAllDiaristTransfers (payment.messages.diarist_transfer.GetAllDiaristTransfersRequest) returns (payment.messages.diarist_transfer.GetAllDiaristTransfersResponse);
+  rpc GetDiaristTransfer (payment.messages.diarist_transfer.GetDiaristTransferRequest) returns (payment.messages.diarist_transfer.GetDiaristTransferResponse);
+  
+  // User
+  
+  //    User Pix Data
+
+  rpc CreateUserPixData (payment.messages.user_pix.CreateUserPixDataRequest) returns (payment.messages.user_pix.CreateUserPixDataResponse);
+  rpc GetAllUserPixData (payment.messages.user_pix.GetAllUserPixDataRequest) returns (payment.messages.user_pix.GetAllUserPixDataResponse);
+  rpc GetUserPixData (payment.messages.user_pix.GetUserPixDataRequest) returns (payment.messages.user_pix.GetUserPixDataResponse);
+  rpc UpdateUserPixData (payment.messages.user_pix.UpdateUserPixDataRequest) returns (payment.messages.user_pix.UpdateUserPixDataResponse);
+  rpc DeleteUserPixData (payment.messages.user_pix.DeleteUserPixDataRequest) returns (payment.messages.user_pix.DeleteUserPixDataResponse);
+  
+  //    User Transfer
+  
+  rpc CreateUserTransfer (payment.messages.user_transfer.CreateUserTransferRequest) returns (payment.messages.user_transfer.CreateUserTransferResponse);
+  rpc GetAllUserTransfers (payment.messages.user_transfer.GetAllUserTransfersRequest) returns (payment.messages.user_transfer.GetAllUserTransfersResponse);
+  rpc GetUserTransfer (payment.messages.user_transfer.GetUserTransferRequest) returns (payment.messages.user_transfer.GetUserTransferResponse);
+  
+  //    User Payment
+  
+  rpc CreateUserPayment (payment.messages.user_payment.CreateUserPaymentRequest) returns (payment.messages.user_payment.CreateUserPaymentResponse);
+  rpc GetAllUserPayments (payment.messages.user_payment.GetAllUserPaymentsRequest) returns (payment.messages.user_payment.GetAllUserPaymentsResponse);
+  rpc GetUserPayment (payment.messages.user_payment.GetUserPaymentRequest) returns (payment.messages.user_payment.GetUserPaymentResponse);
+}

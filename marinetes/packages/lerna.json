@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "useNx": true,
+  "useWorkspaces": true,
+  "npmClient": "npm",
+  "version": "independent",
+  "packages": ["packages/*"],
+  "command": {
+    "publish": {
+      "verifyAccess": true,
+      "registry": "https://npm.pkg.github.com"
+    },
+    "version": {
+      "exact": true,
+      "conventionalCommits": true,
+      "createRelease": "github",
+      "message": "chore(release): publish [skip ci]",
+      "allowBranch": ["release"]
+    }
+  }
+}

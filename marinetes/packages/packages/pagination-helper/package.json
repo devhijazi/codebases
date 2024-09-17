@@ -1,0 +1,35 @@
+{
+  "name": "@marinetesio/pagination-helper",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "typings/index.d.ts",
+  "files": [
+    "dist",
+    "typings",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "directory": "packages/pagination-helper",
+    "url": "git+https://github.com/marinetesio/packages.git"
+  },
+  "scripts": {
+    "clean": "rimraf dist typings",
+    "build:types": "tsc --project tsconfig.types.json",
+    "build:files": "node esbuild.config.js",
+    "build": "run-s clean \"build:{types,files}\""
+  },
+  "peerDependencies": {
+    "typeorm": "^0.2.36"
+  },
+  "dependencies": {
+    "@marinetesio/errors": "0.1.0",
+    "@marinetesio/utils": "0.1.0",
+    "class-transformer": "0.5.1"
+  },
+  "devDependencies": {
+    "typeorm": "0.2.45"
+  }
+}

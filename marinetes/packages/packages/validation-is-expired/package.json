@@ -1,0 +1,27 @@
+{
+  "name": "@marinetesio/validation-is-expired",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "typings/index.d.ts",
+  "files": [
+    "dist",
+    "typings",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "directory": "packages/validation-is-expired",
+    "url": "git+https://github.com/marinetesio/packages.git"
+  },
+  "scripts": {
+    "clean": "rimraf dist typings",
+    "build:types": "tsc --project tsconfig.types.json",
+    "build:files": "node esbuild.config.js",
+    "build": "run-s clean \"build:{types,files}\""
+  },
+  "dependencies": {
+    "@marinetesio/types": "0.1.0"
+  }
+}

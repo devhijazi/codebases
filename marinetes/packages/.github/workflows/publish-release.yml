@@ -1,0 +1,42 @@
+name: Publish Release
+
+on:
+  push:
+    branches: [release]
+
+permissions: write-all
+
+jobs:
+  release:
+    name: Create version, release and publish packages
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_NPM_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.GH_NPM_TOKEN }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install node.js v16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          scope: '@marinetesio'
+          registry-url: 'https://npm.pkg.github.com'
+
+      - name: Install dependencies
+        run: npm install --no-package-lock
+
+      - name: Set up git user
+        uses: fregante/setup-git-user@v1
+
+      - name: Create versions and releases
+        run: npm run version
+
+      - name: Build packages
+        run: npm run build:all
+
+      - name: Publish to github packages
+        run: npm run publish
